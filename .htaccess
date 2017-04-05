@@ -1,0 +1,18 @@
+# cache images and flash content
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# cache text, css, and javascript files
+<FilesMatch ".(js|css|pdf|txt)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# cache html and htm files
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=43200"
+</FilesMatch>
+
+ErrorDocument 401 "Access denided!"
+ErrorDocument 403 "Access denided!"
+#ErrorDocument 404 /league/404.html
